@@ -1,0 +1,46 @@
+[
+  {
+    "id": "TRIAL-001",
+    "name": "GLUCOBALANCE-3",
+    "status": "recruiting",
+    "description": "A Phase 3 randomized trial evaluating the efficacy of GLP-1 receptor agonist combination therapy in Type 2 diabetes patients with inadequate glycemic control on metformin monotherapy.",
+    "criteria": {
+      "ageRange": { "min": 30, "max": 65 },
+      "requiredDiagnoses": ["E11"],
+      "excludedMedications": ["Insulin", "Insulin Glargine", "Insulin Lispro"],
+      "labRequirements": [
+        { "test_name": "HbA1c", "operator": ">=", "value": 7.0 },
+        { "test_name": "HbA1c", "operator": "<=", "value": 10.0 }
+      ]
+    }
+  },
+  {
+    "id": "TRIAL-002",
+    "name": "MINDWELL-2",
+    "status": "recruiting",
+    "description": "A Phase 2 double-blind trial of psilocybin-assisted therapy for treatment-resistant major depressive disorder in adults.",
+    "criteria": {
+      "ageRange": { "min": 18, "max": 55 },
+      "requiredDiagnoses": ["F33"],
+      "excludedMedications": ["Phenelzine", "Tranylcypromine", "Isocarboxazid", "Selegiline"],
+      "labRequirements": [
+        { "test_name": "PHQ-9", "operator": ">=", "value": 10 }
+      ]
+    }
+  },
+  {
+    "id": "TRIAL-003",
+    "name": "RENEW-1",
+    "status": "recruiting",
+    "description": "A Phase 3 trial of a novel SGLT2 inhibitor for slowing progression of chronic kidney disease in patients with moderate renal impairment.",
+    "criteria": {
+      "ageRange": { "min": 40, "max": 75 },
+      "requiredDiagnoses": ["N18"],
+      "excludedMedications": ["Dialysis"],
+      "labRequirements": [
+        { "test_name": "eGFR", "operator": ">=", "value": 30 },
+        { "test_name": "eGFR", "operator": "<=", "value": 59 }
+      ]
+    }
+  }
+]

@@ -1,0 +1,356 @@
+{
+  "info": {
+    "name": "Clinical Trial Eligibility API",
+    "description": "Endpoints for the clinical trial eligibility system. Import this collection into Postman, then run any request to test the API.\n\nMake sure the server is running (`npm run dev`) before sending requests.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      { "key": "key", "value": "x-api-key", "type": "string" },
+      { "key": "value", "value": "sk-clinical-trial-api-key-2026", "type": "string" },
+      { "key": "in", "value": "header", "type": "string" }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "Health check",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["health"]
+            },
+            "auth": { "type": "noauth" },
+            "description": "Returns server status. No authentication required."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Patients",
+      "item": [
+        {
+          "name": "List all patients",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/patients",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "patients"]
+            }
+          }
+        },
+        {
+          "name": "Get patient — Maria Santos (diabetes)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/patients/P001",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "patients", "P001"]
+            }
+          }
+        },
+        {
+          "name": "Get patient — James Chen (depression)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/patients/P002",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "patients", "P002"]
+            }
+          }
+        },
+        {
+          "name": "Get patient — Dorothy Williams (CKD)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/patients/P003",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "patients", "P003"]
+            }
+          }
+        },
+        {
+          "name": "Get patient — not found",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/patients/P999",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "patients", "P999"]
+            },
+            "description": "Tests the not-found case. Note the HTTP status code in the response."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Trials",
+      "item": [
+        {
+          "name": "List all trials",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/trials",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "trials"]
+            }
+          }
+        },
+        {
+          "name": "List active (recruiting) trials",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/trials/active",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "trials", "active"]
+            }
+          }
+        },
+        {
+          "name": "Get trial — GLUCOBALANCE-3",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/trials/TRIAL-001",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "trials", "TRIAL-001"]
+            }
+          }
+        },
+        {
+          "name": "Get trial — MINDWELL-2",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/trials/TRIAL-002",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "trials", "TRIAL-002"]
+            }
+          }
+        },
+        {
+          "name": "Get trial — RENEW-1",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/trials/TRIAL-003",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "trials", "TRIAL-003"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Eligibility",
+      "item": [
+        {
+          "name": "Quick check — P001 (diabetes patient)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/eligibility/check/P001",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "eligibility", "check", "P001"]
+            },
+            "description": "Quick eligibility check by patient ID. Maria Santos should be eligible for GLUCOBALANCE-3."
+          }
+        },
+        {
+          "name": "Quick check — P002 (depression patient)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/eligibility/check/P002",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "eligibility", "check", "P002"]
+            },
+            "description": "James Chen should be eligible for MINDWELL-2."
+          }
+        },
+        {
+          "name": "Quick check — P003 (CKD patient)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/eligibility/check/P003",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "eligibility", "check", "P003"]
+            },
+            "description": "Dorothy Williams should be eligible for RENEW-1."
+          }
+        },
+        {
+          "name": "Charting note — diabetes follow-up",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/eligibility",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "eligibility"]
+            },
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"patientId\": \"P001\",\n  \"note\": \"Patient presents for 3-month follow-up. Blood sugar management discussed. A1C trending down from previous visit.\",\n  \"diagnoses\": [\"E11.65\"],\n  \"medications\": [\"Metformin\"],\n  \"labResults\": [\n    {\n      \"test_name\": \"HbA1c\",\n      \"value\": 7.8,\n      \"unit\": \"%\",\n      \"date\": \"2026-03-10\",\n      \"reference_range\": { \"low\": 4.0, \"high\": 5.6 }\n    }\n  ]\n}"
+            },
+            "description": "Submits a diabetes follow-up charting note for Maria Santos. Should be eligible for GLUCOBALANCE-3."
+          }
+        },
+        {
+          "name": "Charting note — depression assessment",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/eligibility",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "eligibility"]
+            },
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"patientId\": \"P002\",\n  \"note\": \"Patient reports worsening mood over past 2 weeks. PHQ-9 administered. Current SSRI dose appears inadequate.\",\n  \"diagnoses\": [\"F33.1\"],\n  \"medications\": [\"Sertraline\"],\n  \"labResults\": [\n    {\n      \"test_name\": \"PHQ-9\",\n      \"value\": 16,\n      \"unit\": \"score\",\n      \"date\": \"2026-03-10\",\n      \"reference_range\": { \"low\": 0, \"high\": 4 }\n    }\n  ]\n}"
+            },
+            "description": "Submits a depression assessment charting note for James Chen. Should be eligible for MINDWELL-2."
+          }
+        },
+        {
+          "name": "Charting note — CKD monitoring",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/eligibility",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "eligibility"]
+            },
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"patientId\": \"P003\",\n  \"note\": \"Renal function monitoring visit. eGFR stable. Continue current BP management regimen.\",\n  \"diagnoses\": [\"N18.3\"],\n  \"medications\": [\"Lisinopril\", \"Amlodipine\"],\n  \"labResults\": [\n    {\n      \"test_name\": \"eGFR\",\n      \"value\": 44,\n      \"unit\": \"mL/min/1.73m2\",\n      \"date\": \"2026-03-10\",\n      \"reference_range\": { \"low\": 90, \"high\": 120 }\n    },\n    {\n      \"test_name\": \"Creatinine\",\n      \"value\": 1.7,\n      \"unit\": \"mg/dL\",\n      \"date\": \"2026-03-10\",\n      \"reference_range\": { \"low\": 0.6, \"high\": 1.2 }\n    }\n  ]\n}"
+            },
+            "description": "Submits a CKD monitoring charting note for Dorothy Williams. Should be eligible for RENEW-1."
+          }
+        },
+        {
+          "name": "Charting note — patient not found",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/eligibility",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "eligibility"]
+            },
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"patientId\": \"P999\",\n  \"note\": \"New patient intake.\"\n}"
+            },
+            "description": "Tests error handling when a patient ID doesn't exist."
+          }
+        },
+        {
+          "name": "Charting note — empty body",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/eligibility",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "eligibility"]
+            },
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "description": "Tests input validation — sends an empty object with no patientId."
+          }
+        },
+        {
+          "name": "Charting note — patient on excluded medication",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/eligibility",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "eligibility"]
+            },
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"patientId\": \"P001\",\n  \"note\": \"Patient started on insulin due to worsening glycemic control.\",\n  \"medications\": [\"Insulin Glargine\"]\n}"
+            },
+            "description": "Maria Santos is now on insulin, which should disqualify her from GLUCOBALANCE-3."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Request without API key",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/patients",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "patients"]
+            },
+            "auth": { "type": "noauth" },
+            "description": "Tests that requests without an API key are rejected with 401."
+          }
+        },
+        {
+          "name": "Request with wrong API key",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/patients",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "patients"]
+            },
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                { "key": "key", "value": "x-api-key", "type": "string" },
+                { "key": "value", "value": "wrong-key", "type": "string" },
+                { "key": "in", "value": "header", "type": "string" }
+              ]
+            },
+            "description": "Tests that requests with an invalid API key are rejected with 403."
+          }
+        }
+      ]
+    }
+  ]
+}

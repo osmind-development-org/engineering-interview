@@ -1,0 +1,164 @@
+[
+  {
+    "id": "P001",
+    "name": "Maria Santos",
+    "dateOfBirth": "1978-03-15",
+    "diagnoses": [
+      {
+        "code": "E11.65",
+        "description": "Type 2 diabetes mellitus with hyperglycemia",
+        "date_diagnosed": "2021-06-10"
+      },
+      {
+        "code": "E78.5",
+        "description": "Hyperlipidemia, unspecified",
+        "date_diagnosed": "2022-01-20"
+      }
+    ],
+    "medications": [
+      {
+        "name": "Metformin",
+        "dosage": "1000mg twice daily",
+        "startDate": "2021-07-01",
+        "active": true
+      },
+      {
+        "name": "Atorvastatin",
+        "dosage": "20mg daily",
+        "startDate": "2022-02-15",
+        "active": true
+      }
+    ],
+    "labResults": [
+      {
+        "test_name": "HbA1c",
+        "value": 8.2,
+        "unit": "%",
+        "date": "2026-02-15",
+        "reference_range": { "low": 4.0, "high": 5.6 }
+      },
+      {
+        "test_name": "Fasting Glucose",
+        "value": 165,
+        "unit": "mg/dL",
+        "date": "2026-02-15",
+        "reference_range": { "low": 70, "high": 100 }
+      },
+      {
+        "test_name": "LDL Cholesterol",
+        "value": 142,
+        "unit": "mg/dL",
+        "date": "2026-02-15",
+        "reference_range": { "low": 0, "high": 100 }
+      }
+    ]
+  },
+  {
+    "id": "P002",
+    "name": "James Chen",
+    "dateOfBirth": "1995-11-22",
+    "diagnoses": [
+      {
+        "code": "F33.1",
+        "description": "Major depressive disorder, recurrent, moderate",
+        "date_diagnosed": "2023-03-05"
+      },
+      {
+        "code": "F41.1",
+        "description": "Generalized anxiety disorder",
+        "date_diagnosed": "2023-03-05"
+      }
+    ],
+    "medications": [
+      {
+        "name": "Sertraline",
+        "dosage": "100mg daily",
+        "startDate": "2023-04-01",
+        "active": true
+      },
+      {
+        "name": "Buspirone",
+        "dosage": "15mg twice daily",
+        "startDate": "2023-06-15",
+        "active": true
+      }
+    ],
+    "labResults": [
+      {
+        "test_name": "PHQ-9",
+        "value": 14,
+        "unit": "score",
+        "date": "2026-02-20",
+        "reference_range": { "low": 0, "high": 4 }
+      },
+      {
+        "test_name": "GAD-7",
+        "value": 11,
+        "unit": "score",
+        "date": "2026-02-20",
+        "reference_range": { "low": 0, "high": 4 }
+      },
+      {
+        "test_name": "TSH",
+        "value": 2.1,
+        "unit": "mIU/L",
+        "date": "2026-01-10",
+        "reference_range": { "low": 0.4, "high": 4.0 }
+      }
+    ]
+  },
+  {
+    "id": "P003",
+    "name": "Dorothy Williams",
+    "dateOfBirth": "1962-07-08",
+    "diagnoses": [
+      {
+        "code": "N18.3",
+        "description": "Chronic kidney disease, stage 3",
+        "date_diagnosed": "2024-01-15"
+      },
+      {
+        "code": "I10",
+        "description": "Essential hypertension",
+        "date_diagnosed": "2018-09-20"
+      }
+    ],
+    "medications": [
+      {
+        "name": "Lisinopril",
+        "dosage": "20mg daily",
+        "startDate": "2018-10-01",
+        "active": true
+      },
+      {
+        "name": "Amlodipine",
+        "dosage": "5mg daily",
+        "startDate": "2024-02-01",
+        "active": true
+      }
+    ],
+    "labResults": [
+      {
+        "test_name": "eGFR",
+        "value": 42,
+        "unit": "mL/min/1.73m2",
+        "date": "2026-02-10",
+        "reference_range": { "low": 90, "high": 120 }
+      },
+      {
+        "test_name": "Creatinine",
+        "value": 1.8,
+        "unit": "mg/dL",
+        "date": "2026-02-10",
+        "reference_range": { "low": 0.6, "high": 1.2 }
+      },
+      {
+        "test_name": "BUN",
+        "value": 28,
+        "unit": "mg/dL",
+        "date": "2026-02-10",
+        "reference_range": { "low": 7, "high": 20 }
+      }
+    ]
+  }
+]
