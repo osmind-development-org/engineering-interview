@@ -13,7 +13,7 @@
   "license": "ISC",
   "description": "Clinical coding assistant — interview exercise",
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.52.0"
+    "openai": "^4.82.0"
   },
   "devDependencies": {
     "@types/node": "^25.4.0",

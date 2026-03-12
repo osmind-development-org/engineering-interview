@@ -1,23 +1,16 @@
-// The Anthropic SDK is available if you want to use it.
-// Set ANTHROPIC_API_KEY in your .env file (see .env.example).
+// The OpenAI SDK is available if you want to use it.
+// Set OPENAI_API_KEY in your .env file (see .env.example).
 //
-// import Anthropic from "@anthropic-ai/sdk";
+// import OpenAI from "openai";
 //
-// const client = new Anthropic();
+// const client = new OpenAI();
 //
-// async function askClaude(prompt: string): Promise<string> {
-//   const message = await client.messages.create({
-//     model: "claude-sonnet-4-20250514",
-//     max_tokens: 1024,
+// async function askLLM(prompt: string): Promise<string> {
+//   const response = await client.chat.completions.create({
+//     model: "gpt-4o",
 //     messages: [{ role: "user", content: prompt }],
 //   });
-//   // message.content is an array of content blocks
-//   // For a text response, grab the first block:
-//   const block = message.content[0];
-//   if (block.type === "text") {
-//     return block.text;
-//   }
-//   return "";
+//   return response.choices[0]?.message?.content ?? "";
 // }
 
 export interface CodingResult {
