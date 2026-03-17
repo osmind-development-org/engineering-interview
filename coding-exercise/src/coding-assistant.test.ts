@@ -1,4 +1,10 @@
-import { test } from 'vitest';
+import { test, expect } from 'vitest';
+import { prompt } from './coding-assistant';
+
+test('LLM prompt', async () => {
+  const result = await prompt('Reply: Hello world!');
+  expect(result).toBe('Hello world!');
+});
 
 // --- Phase 1: Basic Scenario ---
 test("moderate complexity office visit → 99214", () => {
