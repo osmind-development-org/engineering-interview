@@ -1,19 +1,17 @@
 {
   "name": "clinical-coding-assistant",
   "version": "1.0.0",
-  "main": "dist/index.js",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js",
-    "test": "tsx src/test.ts"
+    "test": "vitest test.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "Clinical coding assistant — interview exercise",
   "dependencies": {
-    "openai": "^4.82.0"
+    "openai": "^4.82.0",
+    "vitest": "^4.1.0"
   },
   "devDependencies": {
     "@types/node": "^25.4.0",
