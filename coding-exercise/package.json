@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "scripts": {
     "build": "tsc",
-    "test": "vitest test.ts"
+    "test": "vitest run"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "Clinical coding assistant — interview exercise",
   "dependencies": {
+    "dotenv": "^17.3.1",
     "openai": "^4.82.0",
     "vitest": "^4.1.0"
   },
@@ -17,5 +18,8 @@
     "@types/node": "^25.4.0",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }
