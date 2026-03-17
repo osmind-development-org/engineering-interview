@@ -1,5 +1,4 @@
 import express from 'express';
-import { authMiddleware } from './middleware/auth';
 import { errorHandler } from './middleware/errorHandler';
 import patientRoutes from './routes/patients';
 import trialRoutes from './routes/trials';
@@ -9,7 +8,6 @@ const app = express();
 const PORT = 3000;
 
 app.use(express.json());
-app.use(authMiddleware);
 
 // Routes
 app.get('/health', (req, res) => {

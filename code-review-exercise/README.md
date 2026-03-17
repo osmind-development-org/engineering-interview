@@ -11,14 +11,6 @@ npm run dev
 
 The server starts on `http://localhost:3000`.
 
-## Authentication
-
-All API requests (except `/health`) require an `x-api-key` header:
-
-```
-x-api-key: sk-clinical-trial-api-key-2026
-```
-
 ## Endpoints
 
 ### Health check
@@ -73,19 +65,19 @@ GET  /api/eligibility/check/:id    # Quick check by patient ID
 
 ### Patients
 
-| ID   | Name             | Key diagnoses                | Key labs     |
-|------|------------------|------------------------------|--------------|
-| P001 | Maria Santos     | Type 2 diabetes, hyperlipidemia | HbA1c 8.2  |
-| P002 | James Chen       | MDD, GAD                     | PHQ-9: 14    |
-| P003 | Dorothy Williams | CKD stage 3, hypertension    | eGFR: 42     |
+| ID   | Name             | Key diagnoses                   | Key labs  |
+| ---- | ---------------- | ------------------------------- | --------- |
+| P001 | Maria Santos     | Type 2 diabetes, hyperlipidemia | HbA1c 8.2 |
+| P002 | James Chen       | MDD, GAD                        | PHQ-9: 14 |
+| P003 | Dorothy Williams | CKD stage 3, hypertension       | eGFR: 42  |
 
 ### Trials
 
-| ID        | Name           | Condition       | Age range | Key criteria              |
-|-----------|----------------|-----------------|-----------|---------------------------|
+| ID        | Name           | Condition       | Age range | Key criteria               |
+| --------- | -------------- | --------------- | --------- | -------------------------- |
 | TRIAL-001 | GLUCOBALANCE-3 | Type 2 diabetes | 30–65     | HbA1c 7.0–10.0, no insulin |
-| TRIAL-002 | MINDWELL-2     | Depression      | 18–55     | PHQ-9 >= 10, no MAOIs     |
-| TRIAL-003 | RENEW-1        | CKD             | 40–75     | eGFR 30–59, no dialysis   |
+| TRIAL-002 | MINDWELL-2     | Depression      | 18–55     | PHQ-9 >= 10, no MAOIs      |
+| TRIAL-003 | RENEW-1        | CKD             | 40–75     | eGFR 30–59, no dialysis    |
 
 ## Scripts
 
