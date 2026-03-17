@@ -4,29 +4,34 @@ A scaffolding for building an AI-powered assistant that reads clinical visit not
 
 ## Setup
 
+### Install Project
+
 ```bash
-cd coding-exercise
+git clone git@github.com:osmind-development-org/engineering-interview.git
+cd engineering-interview/coding-exercise
 npm install
 ```
 
-If you want to use an LLM, copy the env file and add your OpenAI key:
+### OpenAI API Key
+
+To use a LLM, copy the env file and add the provided OpenAI API key:
 
 ```bash
 cp .env.example .env
-# Edit .env with your API key
+# Edit .env with provided OPENAI_API_KEY
 ```
 
-## Running
+## Running Tests
+
+The provided test suite uses [vitest](https://vitest.dev/guide/) (test expectations [cheatsheet](https://github.com/sapegin/vitest-cheat-sheet)):
 
 ```bash
-npm run dev    # Start with hot reload
-npm test       # Run the test cases
+npm test
 ```
 
 ## Files
 
-| File | Purpose |
-|------|---------|
-| `src/coding-assistant.ts` | Implement the functions here |
-| `src/test.ts` | Test cases and payer rule definitions — run with `npm test` |
-| `src/index.ts` | Entry point for manual testing |
+| File                           | Purpose                                   |
+| ------------------------------ | ----------------------------------------- |
+| `src/coding-assistant.ts`      | Implement coding assistant functions here |
+| `src/coding-assistant.test.ts` | Test cases — run with `npm test`          |
